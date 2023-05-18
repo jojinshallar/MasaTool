@@ -1,0 +1,9 @@
+namespace {{ model.projectnamespace }}.Domain.Entities
+{
+    public class {{ model.entityname }} : FullAggregateRoot<{{ model.idtype }}, {{ model.useridtype }}>
+    {
+        private {{ model.entityname }}()
+        {
+        }
+    }
+}

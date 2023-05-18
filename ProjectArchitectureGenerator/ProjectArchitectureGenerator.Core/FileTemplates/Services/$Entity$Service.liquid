@@ -1,0 +1,20 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Application.{{ model.entityname }}.Commands;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Services
+{
+    public class {{ model.entityname }}Service : ServiceBase
+    {
+        public async Task<IResullt> CreateAsync(Create{{ model.entityname }}Command command)
+        {
+
+        }
+
+        public async Task<IResullt> DeleteAsync(Delete{{ model.entityname }}Command command)
+        {
+
+        }
+    }
+}

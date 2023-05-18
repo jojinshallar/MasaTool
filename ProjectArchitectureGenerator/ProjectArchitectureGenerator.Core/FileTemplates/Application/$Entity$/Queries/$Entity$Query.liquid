@@ -1,0 +1,12 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Contracts.Dtos;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}.Queries
+{
+    public record {{ model.entityname }}Query : Query<{{ model.entityname }}Dto>
+    {
+
+    }
+}

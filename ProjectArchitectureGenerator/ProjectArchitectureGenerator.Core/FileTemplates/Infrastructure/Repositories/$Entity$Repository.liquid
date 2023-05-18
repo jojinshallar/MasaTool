@@ -1,0 +1,12 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Domain.Repositories;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Infrastructure.Repositories
+{
+    public class {{ model.entityname }}Repository : I{{ model.entityname }}Repository
+    {
+
+    }
+}

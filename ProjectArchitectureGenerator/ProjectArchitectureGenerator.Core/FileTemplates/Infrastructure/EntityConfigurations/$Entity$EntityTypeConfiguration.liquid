@@ -1,0 +1,18 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Domain.Entities;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Infrastructure.EntityConfigurations
+{
+    public class {{ model.entityname }}EntityTypeConfiguration : IEntityTypeConfiguration<{{ model.entityname }}>
+    {
+        public void Configure(EntityTypeBuilder<{{ model.entityname }}> builder)
+        {
+            builder.ToTable(nameof({{ model.entityname }}));
+            builder.HasKey(cb => cb.Id);
+            builder.Property(cb => cb.Id)
+               .IsRequired();
+        }
+    }
+}

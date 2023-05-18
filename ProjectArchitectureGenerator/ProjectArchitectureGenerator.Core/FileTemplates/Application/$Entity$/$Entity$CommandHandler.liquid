@@ -1,0 +1,29 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Application.{{ model.entityname }}.Commands;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}
+{
+    public class {{ model.entityname }}CommandHandler
+    {
+        private readonly IRepository<{{ model.entityname }}, {{ model.idtype }}> _repository;
+
+        private {{ model.entityname }}CommandHandler(IRepository<{{ model.entityname }}, {{ model.idtype }}> repository)
+        {
+            _repository = repository;
+        }
+
+        [EventHandler]
+        public async Task CreateHandleAsync(Create{{ model.entityname }}Command command)
+        {
+
+        }
+
+        [EventHandler]
+        public async Task DeleteHandleAsync(Delete{{ model.entityname }}Command command)
+        {
+
+        }
+    }
+}

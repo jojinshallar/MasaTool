@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="FileTemplates\Pages\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="FileTemplates\Application\%24Entity%24\%24Entity%24CommandHandler.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\%24Entity%24QueryHandler.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Commands\Create%24Entity%24Command.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Commands\Create%24Entity%24CommandValidator.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Commands\Delete%24Entity%24Command.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Commands\Delete%24Entity%24CommandValidator.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Queries\%24Entity%24Query.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Queries\%24Entity%24QueryList.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Queries\%24Entity%24QueryListValidator.liquid" />
+		<None Remove="FileTemplates\Application\%24Entity%24\Queries\%24Entity%24QueryValidator.liquid" />
+		<None Remove="FileTemplates\Contracts\%24Entity%24\Dtos\%24Entity%24Dto.liquid" />
+		<None Remove="FileTemplates\Contracts\%24Entity%24\Dtos\%24Entity%24ListItemDto.liquid" />
+		<None Remove="FileTemplates\Contracts\IntegrationEvents\%24Entity%24CreatedIntegrationEvent.liquid" />
+		<None Remove="FileTemplates\Domain\Entities\%24Entity%24.liquid" />
+		<None Remove="FileTemplates\Domain\Events\%24Entity%24CreatedIntegrationDomainEvent.liquid" />
+		<None Remove="FileTemplates\Domain\Repositories\I%24Entity%24Repository.liquid" />
+		<None Remove="FileTemplates\Infrastructure\EntityConfigurations\%24Entity%24EntityTypeConfiguration.liquid" />
+		<None Remove="FileTemplates\Infrastructure\Repositories\%24Entity%24Repository.liquid" />
+		<None Remove="FileTemplates\Services\%24Entity%24Service.liquid" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\$Entity$CommandHandler.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\$Entity$QueryHandler.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Commands\Create$Entity$Command.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Commands\Create$Entity$CommandValidator.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Commands\Delete$Entity$Command.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Commands\Delete$Entity$CommandValidator.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Queries\$Entity$Query.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Queries\$Entity$QueryList.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Queries\$Entity$QueryListValidator.liquid" />
+		<EmbeddedResource Include="FileTemplates\Application\$Entity$\Queries\$Entity$QueryValidator.liquid" />
+		<EmbeddedResource Include="FileTemplates\Contracts\$Entity$\Dtos\$Entity$Dto.liquid" />
+		<EmbeddedResource Include="FileTemplates\Contracts\$Entity$\Dtos\$Entity$ListItemDto.liquid" />
+		<EmbeddedResource Include="FileTemplates\Contracts\IntegrationEvents\$Entity$CreatedIntegrationEvent.liquid" />
+		<EmbeddedResource Include="FileTemplates\Domain\Entities\$Entity$.liquid" />
+		<EmbeddedResource Include="FileTemplates\Domain\Events\$Entity$CreatedIntegrationDomainEvent.liquid" />
+		<EmbeddedResource Include="FileTemplates\Domain\Repositories\I$Entity$Repository.liquid" />
+		<EmbeddedResource Include="FileTemplates\Infrastructure\EntityConfigurations\$Entity$EntityTypeConfiguration.liquid" />
+		<EmbeddedResource Include="FileTemplates\Infrastructure\Repositories\$Entity$Repository.liquid" />
+		<EmbeddedResource Include="FileTemplates\Services\$Entity$Service.liquid" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Scriban" Version="5.6.0" />
+	</ItemGroup>
+
+</Project>

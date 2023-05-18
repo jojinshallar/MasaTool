@@ -1,0 +1,29 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Application.{{ model.entityname }}.Queries;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}
+{
+    public class {{ model.entityname }}QueryHandler
+    {
+        private readonly IRepository<{{ model.entityname }}, {{ model.idtype }}> _repository;
+
+        private {{ model.entityname }}QueryHandler(IRepository<{{ model.entityname }}, {{ model.idtype }}> repository)
+        {
+            _repository = repository;
+        }
+
+        [EventHandler]
+        public async Task QueryHandleAsync({{ model.entityname }}Query query)
+        {
+
+        }
+
+        [EventHandler]
+        public async Task QueryListHandleAsync({{ model.entityname }}ListQuery query)
+        {
+
+        }
+    }
+}

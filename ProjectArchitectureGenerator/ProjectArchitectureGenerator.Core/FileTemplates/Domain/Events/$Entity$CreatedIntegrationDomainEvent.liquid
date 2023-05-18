@@ -1,0 +1,15 @@
+{{- if model.includelocalusing -}}
+using {{ model.projectnamespace }}.Domain.Entities;
+using {{ model.projectnamespace }}.Contracts.IntegrationEvents;
+{{ raw }}
+{{ endraw }}
+{{- end -}}
+namespace {{ model.projectnamespace }}.Domain.Events
+{
+    public class {{ model.entityname }}CreatedIntegrationDomainEvent : {{ model.entityname }}CreatedIntegrationEvent, IIntegrationDomainEvent
+{
+        private {{ model.entityname }}CreatedIntegrationDomainEvent({{ model.entityname }} entity) : base()
+        {
+        }
+    }
+}
