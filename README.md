@@ -36,4 +36,5 @@ dotnet publish -c Release -r [runtime identifier] /p:PublishSingleFile=true /p:P
 ```
 MasaPAG --pjname ABC.EShop --entityname Phone --output "C:\ProjectFiles"
 ```
-
+*生成的文件和文件夹如下图：*  
+![alt 生成图片](https://github.com/jojinshallar/MasaTool/blob/master/Images/MasaPAGFolderSample.png)
