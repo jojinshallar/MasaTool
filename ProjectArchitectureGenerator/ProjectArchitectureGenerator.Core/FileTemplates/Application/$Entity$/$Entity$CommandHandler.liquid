@@ -7,9 +7,9 @@ namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}
 {
     public class {{ model.entityname }}CommandHandler
     {
-        private readonly IRepository<{{ model.entityname }}, {{ model.idtype }}> _repository;
+        private readonly IRepository<Domain.Entities.{{ model.entityname }}, {{ model.idtype }}> _repository;
 
-        private {{ model.entityname }}CommandHandler(IRepository<{{ model.entityname }}, {{ model.idtype }}> repository)
+        private {{ model.entityname }}CommandHandler(IRepository<Domain.Entities.{{ model.entityname }}, {{ model.idtype }}> repository)
         {
             _repository = repository;
         }
@@ -17,13 +17,13 @@ namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}
         [EventHandler]
         public async Task CreateHandleAsync(Create{{ model.entityname }}Command command)
         {
-
+            throw new NotImplementedException();
         }
 
         [EventHandler]
         public async Task DeleteHandleAsync(Delete{{ model.entityname }}Command command)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

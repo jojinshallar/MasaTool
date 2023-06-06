@@ -9,17 +9,19 @@ async Task<int> InitCommand(string[] args)
     Option<string> projectNameOption = BuildProjectNameOption();
     Option<string> entityNameOption = BuildEntityNameOption();
     Option<bool> localUsingOption = BuildLocalUsingOption();
+    Option<string> idTypeOption = BuildIdTypeOption();
     var rootCommand = new RootCommand("MasaFramework项目架构实体文件快速生成工具");
     rootCommand.AddOption(folderOption);
     rootCommand.AddOption(projectNameOption);
     rootCommand.AddOption(entityNameOption);
     rootCommand.AddOption(localUsingOption);
+    rootCommand.AddOption(idTypeOption);
 
-    rootCommand.SetHandler(async (folder,projectName, entityName,localUsing) =>
+    rootCommand.SetHandler(async (folder,projectName, entityName,localUsing, idType) =>
     {
-        await EmbbedArchGenerator.GenerateAsync(projectName, entityName, folder, localUsing);
+        await EmbbedArchGenerator.GenerateAsync(projectName, entityName, folder, localUsing, idType);
         OpenFolder(folder);
-    }, folderOption,projectNameOption, entityNameOption,localUsingOption);
+    }, folderOption,projectNameOption, entityNameOption,localUsingOption, idTypeOption);
     return await rootCommand.InvokeAsync(args);
 }
 
@@ -121,6 +123,14 @@ Option<bool> BuildLocalUsingOption()
         name: "--localusing",
         description: "添加本地命名空间引用，默认为true，如果为false需要手动添加或者在全局引用类_Imports.cs中添加",
         getDefaultValue: () => true);
+}
+
+Option<string> BuildIdTypeOption()
+{
+    return new Option<string>(
+        name: "--idtype",
+        description: "实体类唯一标识类型，默认为Guid",
+        getDefaultValue: () => "Guid");
 }
 
 bool IsValidFolderPath(string path)

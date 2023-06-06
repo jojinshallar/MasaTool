@@ -6,9 +6,9 @@ using {{ model.projectnamespace }}.Contracts.IntegrationEvents;
 {{- end -}}
 namespace {{ model.projectnamespace }}.Domain.Events
 {
-    public class {{ model.entityname }}CreatedIntegrationDomainEvent : {{ model.entityname }}CreatedIntegrationEvent, IIntegrationDomainEvent
-{
-        private {{ model.entityname }}CreatedIntegrationDomainEvent({{ model.entityname }} entity) : base()
+    public record {{ model.entityname }}CreatedIntegrationDomainEvent : {{ model.entityname }}CreatedIntegrationEvent,  IIntegrationDomainEvent
+	{
+        public {{ model.entityname }}CreatedIntegrationDomainEvent({{ model.entityname }} entity) : base()
         {
         }
     }

@@ -7,6 +7,6 @@ namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}.Querie
 {
     public record {{ model.entityname }}Query : Query<{{ model.entityname }}Dto>
     {
-
+        public override {{ model.entityname }}Dto Result { get; set; }
     }
 }

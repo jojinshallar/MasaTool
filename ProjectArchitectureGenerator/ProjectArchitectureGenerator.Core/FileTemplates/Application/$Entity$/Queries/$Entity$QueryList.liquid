@@ -7,6 +7,6 @@ namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}.Querie
 {
     public record {{ model.entityname }}ListQuery : Query<PaginatedListBase<{{ model.entityname }}ListItemDto>>
     {
-
+        public override PaginatedListBase<{{ model.entityname }}ListItemDto> Result { get; set; }
     }
 }

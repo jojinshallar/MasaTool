@@ -7,9 +7,9 @@ namespace {{ model.projectnamespace }}.Application.{{ model.entityname }}
 {
     public class {{ model.entityname }}QueryHandler
     {
-        private readonly IRepository<{{ model.entityname }}, {{ model.idtype }}> _repository;
+        private readonly IRepository<Domain.Entities.{{ model.entityname }}, {{ model.idtype }}> _repository;
 
-        private {{ model.entityname }}QueryHandler(IRepository<{{ model.entityname }}, {{ model.idtype }}> repository)
+        private {{ model.entityname }}QueryHandler(IRepository<Domain.Entities.{{ model.entityname }}, {{ model.idtype }}> repository)
         {
             _repository = repository;
         }
